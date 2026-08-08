@@ -9,6 +9,14 @@ COMMON_CHECK="-define:ODIN_TEST_FANCY=false -file -vet -strict-style -ignore-unu
 
 set -x
 
+# FIXME: might be nicer to put this at the bottom of the file
+if [[ ! $($ODIN build ../test_issue_7245.odin) ]]; then
+    echo "KNOWN FAILURE"
+else
+    echo "SUCCESS: MOVE THIS TEST TO SUCCESS TESTS"
+    exit 1
+fi
+
 $ODIN test ../test_issue_829.odin $COMMON
 $ODIN test ../test_issue_1592.odin $COMMON
 $ODIN test ../test_issue_1730.odin $COMMON

@@ -6,6 +6,7 @@ set -u
 
 tests="
 	test_3099.odin
+	test_5851.odin
 "
 
 checks="

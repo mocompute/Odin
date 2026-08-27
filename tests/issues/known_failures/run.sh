@@ -10,6 +10,7 @@ tests="
 
 checks="
 	test_4498.odin
+	test_4795.odin
 "
 
 failures=0

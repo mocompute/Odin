@@ -18,6 +18,7 @@ checks="
 
 runs="
 	test_6985.odin
+	test_7436.odin
 "
 
 failures=0

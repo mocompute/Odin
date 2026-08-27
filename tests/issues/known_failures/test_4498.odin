@@ -1,4 +1,5 @@
-package main
+// https://github.com/odin-lang/Odin/issues/4498
+package tests_issues_known_failures
 
 import "core:fmt"
 

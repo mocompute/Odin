@@ -7,6 +7,7 @@ set -u
 tests="
 	test_3099.odin
 	test_5851.odin
+	test_6361.odin
 	test_7430.odin
 "
 

@@ -15,6 +15,10 @@ checks="
 	test_4795.odin
 "
 
+runs="
+	test_6985.odin
+"
+
 failures=0
 
 for f in $tests; do
@@ -38,6 +42,22 @@ for f in $checks; do
 	echo "Checking known failure $f."
 
 	timeout 5 "$ODIN" check "$f" -file
+	status=$?
+	if [ "$status" -eq 124 ]; then
+		# command timed out, expected failure
+		status=1
+	elif [ "$status" -eq 0 ]; then
+		failures=$((failures + 1))
+		echo "EXPECTED FAILURE PASSED: $f"
+	fi
+
+done
+
+for f in $runs; do
+
+	echo "Running known failure $f."
+
+	timeout 5 "$ODIN" run "$f" -file
 	status=$?
 	if [ "$status" -eq 124 ]; then
 		# command timed out, expected failure

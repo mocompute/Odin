@@ -14,6 +14,7 @@ tests="
 checks="
 	test_4498.odin
 	test_4795.odin
+	test_7470.odin
 "
 
 runs="
